@@ -11,7 +11,7 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            min-height: 100vh;
             background-color: #f7f7f7;
         }
 
@@ -31,6 +31,7 @@
             text-align: center;
             width: 100%;
             margin-top: auto;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
         }
 
         footer a {
@@ -46,7 +47,7 @@
             max-width: 800px;
             width: 100%;
             padding: 1em;
-            background: white;
+            background: linear-gradient(to bottom, #ffffff, #f1f1f1);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-top: 1em;
             border-radius: 8px;
@@ -56,11 +57,16 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-color: #eef5ee;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .mood-input label {
             margin-bottom: 0.5em;
             font-weight: bold;
+            font-size: 1.2em;
         }
 
         .mood-input select {
@@ -79,6 +85,7 @@
             color: white;
             font-size: 1em;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         .mood-input button:hover {
@@ -99,10 +106,31 @@
             border-radius: 4px;
             background-color: #f9f9f9;
             font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+
+        .calendar div:hover {
+            background-color: #eef5ee;
         }
 
         .stats {
             margin-top: 2em;
+            background-color: #eef5ee;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats h2 {
+            margin-bottom: 0.5em;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .stats p {
+            text-align: center;
+            font-size: 1em;
+            color: #555;
         }
     </style>
 </head>
