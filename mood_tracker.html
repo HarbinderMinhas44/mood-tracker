@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            background-color: #4caf50;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 1em;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 1em;
+            border-radius: 8px;
+        }
+
+        .mood-input {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mood-input label {
+            margin-bottom: 0.5em;
+        }
+
+        .mood-input select {
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .calendar {
+            margin-top: 2em;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+
+        .calendar div {
+            padding: 1em;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+
+        .stats {
+            margin-top: 2em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mood Tracker</h1>
+    </header>
+
+    <div class="container">
+        <section class="mood-input">
+            <label for="mood">How are you feeling today?</label>
+            <select id="mood">
+                <option value="">--Select Mood--</option>
+                <option value="happy">Happy</option>
+                <option value="sad">Sad</option>
+                <option value="stressed">Stressed</option>
+                <option value="calm">Calm</option>
+                <option value="excited">Excited</option>
+            </select>
+            <button id="saveMood">Save Mood</button>
+        </section>
+
+        <section class="calendar" id="calendar">
+            <!-- Calendar will be dynamically populated -->
+        </section>
+
+        <section class="stats" id="stats">
+            <!-- Stats will be dynamically updated -->
+        </section>
+    </div>
+
+    <script>
+        // Placeholder script: Functionality will be added
+        document.getElementById('saveMood').addEventListener('click', () => {
+            const mood = document.getElementById('mood').value;
+            if (mood) {
+                alert(`Mood saved: ${mood}`);
+                // Logic to save mood and update calendar/stats will go here
+            } else {
+                alert('Please select a mood before saving.');
+            }
+        });
+
+        // Dynamic calendar and stats logic will follow
+    </script>
+</body>
+</html>
