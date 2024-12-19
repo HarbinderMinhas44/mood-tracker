@@ -110,8 +110,24 @@
             transition: background-color 0.3s;
         }
 
-        .calendar div:hover {
-            background-color: #eef5ee;
+        .calendar div.mood-happy {
+            background-color: #c8e6c9;
+        }
+
+        .calendar div.mood-sad {
+            background-color: #ffccbc;
+        }
+
+        .calendar div.mood-stressed {
+            background-color: #ffe082;
+        }
+
+        .calendar div.mood-calm {
+            background-color: #b3e5fc;
+        }
+
+        .calendar div.mood-excited {
+            background-color: #d1c4e9;
         }
 
         .stats {
@@ -177,17 +193,41 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        const calendar = document.getElementById('calendar');
+        const moodData = {};
+
+        // Populate calendar with days of the month
+        for (let i = 1; i <= 31; i++) {
+            const dayDiv = document.createElement('div');
+            dayDiv.textContent = i;
+            dayDiv.setAttribute('data-day', i);
+            dayDiv.classList.add('day');
+            calendar.appendChild(dayDiv);
+        }
+
         document.getElementById('saveMood').addEventListener('click', () => {
             const mood = document.getElementById('mood').value;
             const alertContainer = document.getElementById('alertContainer');
+            const currentDay = new Date().getDate();
+
             if (mood) {
+                // Save mood
+                moodData[currentDay] = mood;
+
+                // Update calendar
+                const dayDiv = document.querySelector(`[data-day='${currentDay}']`);
+                if (dayDiv) {
+                    dayDiv.className = '';
+                    dayDiv.classList.add('mood-' + mood);
+                }
+
+                // Show success message
                 alertContainer.classList.remove('d-none');
                 alertContainer.classList.add('alert-success');
-                alertContainer.textContent = `Mood saved: ${mood}`;
+                alertContainer.textContent = `Mood saved for day ${currentDay}: ${mood}`;
                 setTimeout(() => {
                     alertContainer.classList.add('d-none');
                 }, 3000);
-                // Logic to save mood and update calendar/stats will go here
             } else {
                 alertContainer.classList.remove('d-none');
                 alertContainer.classList.remove('alert-success');
@@ -198,8 +238,6 @@
                 }, 3000);
             }
         });
-
-        // Dynamic calendar and stats logic will follow
     </script>
 </body>
 </html>
