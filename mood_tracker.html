@@ -153,6 +153,43 @@
         .alert {
             margin-top: 1em;
         }
+        .legend {
+            margin-top: 2em;
+            text-align: center;
+            padding: 1em;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .legend span {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #fff;
+        }
+
+        .legend .happy {
+            background-color: #c8e6c9;
+        }
+
+        .legend .sad {
+            background-color: #ffccbc;
+        }
+
+        .legend .stressed {
+            background-color: #ffe082;
+        }
+
+        .legend .calm {
+            background-color: #b3e5fc;
+        }
+
+        .legend .excited {
+            background-color: #d1c4e9;
+        }
     </style>
 </head>
 <body>
@@ -180,6 +217,14 @@
 
         <section class="calendar" id="calendar">
             <!-- Calendar will be dynamically populated -->
+        </section>
+        <section class="legend">
+            <h2>Mood Legend</h2>
+            <span class="happy">Happy</span>
+            <span class="sad">Sad</span>
+            <span class="stressed">Stressed</span>
+            <span class="calm">Calm</span>
+            <span class="excited">Excited</span>
         </section>
 
         <section class="stats" id="stats">
